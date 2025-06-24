@@ -1,6 +1,6 @@
 # 🎯 Mini Wordle Clone
 
-A sleek, fully-functional Wordle clone built with just **HTML**, **CSS**, and **Vanilla JavaScript** — no frameworks, no fluff, just pure frontend fire 🔥
+A sleek, fully-functional Wordle clone built with just **HTML**, **CSS**, and **JavaScript** — no frameworks, no fluff, just pure frontend fire 🔥
 
 This mini-project replicates the original game mechanics:
 - You have **6 attempts** to guess a 5-letter word
