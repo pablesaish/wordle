@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Mini Wordle</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Mini Wordle</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1>Mini Wordle</h1>
-  <div id="grid" class="grid"></div>
+    <h1>Mini Wordle</h1>
 
-  <div>
-    <input type="text" id="guess-input" maxlength="5" autofocus />
-    <button onclick="submitGuess()">Submit</button>
-  </div>
+    <div id="grid" class="grid"></div>
 
-  <div class="message" id="message"></div>
+    <div>
+        <input type="text" id="guess-input" maxlength="5" autofocus />
+        <button onclick="submitGuess()">Submit</button>
+    </div>
 
-  <script src="app.js"></script>
+    <div class="message" id="message">Loading word...</div>
+    <button id="play-again-btn" onclick="resetGame()" style="display: none;">Play Again</button>
+
+    <script src="app.js"></script>
 </body>
+
 </html>

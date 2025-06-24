@@ -5,11 +5,12 @@ let currentAttempt = 0;
 const grid = document.getElementById('grid');
 const input = document.getElementById('guess-input');
 const message = document.getElementById('message');
+const playAgainBtn = document.getElementById('play-again-btn');
 
 input.addEventListener("keydown", function (e) {
-  if (e.key === "Enter") {
-    submitGuess();
-  }
+    if (e.key === "Enter") {
+        submitGuess();
+    }
 });
 
 function createGrid() {
@@ -72,18 +73,19 @@ function submitGuess() {
     input.focus();
 
     if (guess === WORD) {
-        message.textContent = "You got it!";
+        message.textContent = "🎉 You got it!";
         input.disabled = true;
+        playAgainBtn.style.display = "inline-block";
     } else if (currentAttempt === MAX_ATTEMPTS) {
-        message.textContent = `Word was "${WORD}"`;
+        message.textContent = `😞 Game Over! The word was "${WORD}".`;
         input.disabled = true;
+        playAgainBtn.style.display = "inline-block";
     }
-    
 }
 
 async function loadWord() {
     try {
-        const response = await fetch("data/words.json");
+        const response = await fetch("data/words.json"); // make sure words.json is in a "data" folder
         const words = await response.json();
         WORD = words[Math.floor(Math.random() * words.length)].toUpperCase();
         console.log("Word selected:", WORD);
@@ -93,6 +95,18 @@ async function loadWord() {
         message.textContent = "Error loading word list.";
         input.disabled = true;
     }
+}
+
+function resetGame() {
+    currentAttempt = 0;
+    input.disabled = false;
+    input.value = "";
+    input.focus();
+    message.textContent = "Start guessing!";
+    playAgainBtn.style.display = "none";
+    grid.innerHTML = "";
+    createGrid();
+    loadWord();
 }
 
 createGrid();
