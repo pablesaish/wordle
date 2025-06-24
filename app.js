@@ -85,7 +85,7 @@ function submitGuess() {
 
 async function loadWord() {
     try {
-        const response = await fetch("data/words.json"); // make sure words.json is in a "data" folder
+        const response = await fetch("data/words.json");
         const words = await response.json();
         WORD = words[Math.floor(Math.random() * words.length)].toUpperCase();
         console.log("Word selected:", WORD);
