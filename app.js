@@ -73,11 +73,11 @@ function submitGuess() {
     input.focus();
 
     if (guess === WORD) {
-        message.textContent = "🎉 You got it!";
+        message.textContent = "You got it!";
         input.disabled = true;
         playAgainBtn.style.display = "inline-block";
     } else if (currentAttempt === MAX_ATTEMPTS) {
-        message.textContent = `😞 Game Over! The word was "${WORD}".`;
+        message.textContent = `Game Over! The word was "${WORD}".`;
         input.disabled = true;
         playAgainBtn.style.display = "inline-block";
     }
