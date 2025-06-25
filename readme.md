@@ -11,6 +11,11 @@ This mini-project replicates the original game mechanics:
 - When the game ends, a **Play Again** button resets everything instantly!
 
 ---
+### 📎 Live Demo
+
+[Click here to play the game 🎮](https://pablesaish.github.io/wordle/)
+
+---
 
 ## ✨ Features
 
