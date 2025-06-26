@@ -1,6 +1,7 @@
 let WORD = "";
 const MAX_ATTEMPTS = 6;
 let currentAttempt = 0;
+let VALID_WORDS = []; // Store all valid words from words.json
 
 const grid = document.getElementById('grid');
 const input = document.getElementById('guess-input');
@@ -34,6 +35,12 @@ function submitGuess() {
     const guess = input.value.toUpperCase();
     if (guess.length !== 5) {
         message.textContent = "Enter a 5-letter word!";
+        input.focus();
+        return;
+    }
+
+    if (!VALID_WORDS.includes(guess.toLowerCase())) {
+        message.textContent = "Not in word list!";
         input.focus();
         return;
     }
@@ -87,6 +94,9 @@ async function loadWord() {
     try {
         const response = await fetch("data/words.json");
         const words = await response.json();
+        // Store all words for validation
+        VALID_WORDS = [...words];
+        // Select a random word as the target
         WORD = words[Math.floor(Math.random() * words.length)].toUpperCase();
         console.log("Word selected:", WORD);
         message.textContent = "Start guessing!";
