@@ -40,9 +40,9 @@ function submitGuess() {
     }
 
     if (!VALID_WORDS.includes(guess.toLowerCase())) {
-    message.textContent = "Not in word list!";
-    input.focus();
-    return;
+        message.textContent = "Not in word list!";
+        input.focus();
+        return;
     }
 
     const row = grid.children[currentAttempt];
