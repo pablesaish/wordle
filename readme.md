@@ -1,5 +1,5 @@
 # 🎯 Mini Wordle
-
+ 
 A sleek, fully-functional Wordle clone built with just **HTML**, **CSS**, and **JavaScript** — no frameworks, no fluff, just pure frontend fire 🔥
 
 This mini-project replicates the original game mechanics:
